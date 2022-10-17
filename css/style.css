@@ -345,6 +345,7 @@ video {
                              "opciones";
     }
 
+
     .columna1{
         display: flex;
         grid-area: opciones;
@@ -355,9 +356,14 @@ video {
         display: flex;
     }
 
-    .siguiente .anterior .play {
-        width: 100px;
-        height: 100px;
+    .superior > * {
+        width: 80px;
+        height: 80px;
+    }
+
+    .inferior > * {
+        width: 80px;
+        height: 80px;
     }
 
     .columna2{
