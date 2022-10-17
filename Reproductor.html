@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Reproductor de Vídeo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/player.js"></script>
+
+</head>
+
+<body>
+
+
+    <!-- Ventana de ayuda -->
+    <div class="ventana">
+        <h2>Atajos de Teclado</h2>
+        <ul>
+            <li>Flecha Izquierda: Atrasar 5 segundos</li>
+            <li>Flecha Derecha: Adelantar 5 segundos</li>
+            <li>M: Activar/Desactivar Volumen</li>
+            <li>S: Siguiente Video</li>
+            <li>A: Video Anterior</li>
+            <li>H: Ver atajos</li>
+            <li>P: Pantalla Completa</li>
+        </ul>
+
+        <br>
+        <button class="aceptar boton">Aceptar</button>
+    </div>
+
+
+    <!-- Contenido principal-->
+    <section>
+
+        <!-- Columna izquierda -->
+        <div class="columna1">
+
+            <!-- Botones superiores: siguiente, play y anterior -->
+            <div class="superior">
+                <img src="img/siguiente.png" class="siguiente boton" title="Ver siguiente video">
+                <img src="img/anterior .png" class="anterior boton" title="Ver video anterior">
+                <img src="img/play.png" class="play boton" title="Reproducir el video">
+
+            </div>
+
+            <!-- Botones inferiores: volumen, me gusta e indefinido-->
+            <div class="inferior">
+                <img src="img/corazon_negro.png" class="megusta boton" title="Me gusta">
+                <div class="contenedor">
+                    <img src="img/volumen1.png" class="volumen boton" title="Desactivar volumen">
+                    <div id="sobresaliente">
+                        <div id="barraGris">
+                            <div id="barraVolumen"></div>
+                        </div>
+                    </div>
+                </div>
+                <img src="img/rapido.svg" class="podcast boton" title="Función sin determinar">
+            </div>
+
+
+        </div>
+
+        <!-- Columna del video, barra de avance y título-->
+        <div class="columna2">
+
+            <!-- Fila del video-->
+            <div class="fila1">
+                <div class="contenedorVideo">
+
+                    <!-- Ventana de velocidad de reproducción -->
+                    <div class="ventanaLateral" id="vVelocidades">
+
+                        <b>Selecciona la velocidad de reproducción</b>
+                        <div>
+                            <ul>
+                                <li id="v0.2" class="boton">x 0.2</li>
+                                <li id="v0.5" class="boton">x 0.5</li>
+                                <li id="v1.0" class="boton">x 1</li>
+                                <li id="v2.0" class="boton">x 2</li>
+                                <li id="v2.5" class="boton">x 2.5</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!-- Elemento de video-->
+                    <video src="">
+                    </video>
+
+                    <!-- Ventana de resoluciones del video-->
+                    <div class="ventanaLateral" id="vResoluciones">
+
+                        <b>Selecciona la resolución del video</b>
+                        <div>
+                            <ul>
+                                <li id="cAuto" class="boton">Automática</li>
+                                <li id="c240" class="boton">240p</li>
+                                <li id="c360" class="boton">360p</li>
+                                <li id="c480" class="boton">480p</li>
+                                <li id="c720" class="boton">720p</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="progress-bar">
+                        <span class="number"></span>
+                
+                        <svg height="150" width="150" class="circle">
+                            <circle cx="75" cy="75" r="65" stroke="violet" stroke-width="20" fill="none"></circle>
+                        </svg>
+                    </div>
+
+                </div>
+
+                <!--Botón de ayuda-->
+                <img src="img/Información.png" class="ayuda boton" title="Ayuda">
+
+                <!-- Botones flotantes-->
+                <div class="flotante">
+                    <img src="img/lento.svg" class="velocidad">
+                    <img src="img/lento.svg" class="calidad">
+                    <img src="img/ampliar.svg" class="ampliar">
+                </div>
+            </div>
+
+            <!--Barra de buffer y avance-->
+            <div class="fila2">
+                <div class="barra boton">
+                    <!--Barra de la carga del buffer-->
+                    <div class="bufferBarra"></div>
+                    <!--Barra que muestra en tiempo real el avance del video-->
+                    <div class="avanceBarra">
+                        <div class="frontera"></div>
+                    </div>
+                    <!--Barra que se muestra cuando el usuario coloca el cursor para adelantar-->
+                    <div class="cursorBarra"></div>
+                </div>
+            </div>
+
+            <!-- Fila del título y el avance del tiempo-->
+            <div class="fila3">
+                <div class="fila4">
+                    <h1 id="tituloV">Título provisional</h1>
+                </div>
+                <div class="estado">
+                    <p id="marcaTiempo">00:00/00:00 </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>

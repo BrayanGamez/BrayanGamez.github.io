@@ -1,0 +1,334 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+
+    /* Se desactiva que el usuario pueda seleccionar texto */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;          
+}
+
+
+img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+
+section {
+
+    /* Hay dos columnas en la sección principal*/
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-column-gap: 15px;
+    box-sizing: border-box;
+
+}
+
+
+.columna1 {
+    display: grid;
+
+    /*Dos filas de botones */
+    grid-template-rows: 230px 230px;
+    grid-row-gap: 0;
+    width: 100%;
+
+    height: fit-content;
+}
+
+.superior{
+    display: grid;
+    /*Tres botones para cada fila*/
+    grid-template-rows: 50px 50px 70px;
+    width: 100%;
+    grid-row-gap: 15px;
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+.inferior {
+    display: grid;
+    /*Tres botones para cada fila*/
+    grid-template-rows: 70px 50px 50px;
+    width: 100%;
+    grid-row-gap: 15px;
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+
+.columna2 {
+    display: grid;
+    /*En la columna derecha está el video, la barra de avance y el titulo*/
+    grid-template-rows: 1fr 10px 2px;
+    grid-row-gap: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.fila3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+/*Marca de tiempo*/
+.estado p {
+    float: right;
+    font-size: 1.5em;
+    padding-right:10px;
+}
+
+/*Barra base*/
+.barra {
+    background-color: rgb(222, 222, 222);
+    height: 10px;
+    position: relative;
+    border-radius: 10px;
+}
+
+/*Al posicionarse sobre los botones, el cursor será el de puntero*/
+.boton:hover {
+    cursor: pointer;
+}
+
+.bufferBarra {
+    width: 0;
+    height: 100%;
+    background-color: rgb(90, 90, 90);
+    border-radius: 10px;
+
+}
+
+.avanceBarra {
+    background-color: rgb(164,0,179);
+    height: 100%;
+    width: 0;
+    position: relative;
+    margin-top: -10px;
+    border-radius: 10px;
+}
+
+/*Pequeño círculo que se ubica al final de la barra de avance*/
+.frontera {
+    visibility: hidden;
+    width: 16px;
+    height: 16px;
+    border-radius: 9px;
+    background-color: rgb(164,0,179);
+
+    position: absolute;
+    right: -10px;
+    top: -3px;
+}
+
+/*Barra que se muestra únicamente al colocar el mouse*/
+.cursorBarra {
+    background-color: rgb(246, 151, 255);
+    height: 100%;
+    width: 0%;
+    margin-top: -10px;
+    border-radius: 10px;
+}
+
+
+.contenedorVideo{
+    position:relative;
+    height: 100%;
+    max-height: calc(100vh - 102px);
+
+}
+
+video {
+
+    width: 100%;
+    height: 100%;
+    max-height: calc(100vh - 102px);
+
+    margin: auto;
+    background-color: black;
+    border-radius: 5%;
+
+}
+
+.fila1 {
+    position: relative;
+}
+
+/* Tres botones flotantes */
+.flotante {
+    position: absolute;
+    margin: 0;
+    z-index: 5;
+    bottom: 5%;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-column-gap: 15px;
+    opacity: 0;
+}
+
+.flotante img {
+    height: 50px;
+}
+
+.fila2 {
+    margin: 10px;
+}
+
+.ayuda{
+    position:absolute;
+    right:20px;
+    top:20px;
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+}
+
+/* Ventana de Ayuda*/
+.ventana{
+    position:fixed;
+    top:-1000px;
+    z-index:5;
+    transition: top 0.5s;
+    
+    width: calc(fit-content + 100px);
+    background-color: white;
+    border-radius: 10%;
+    padding:20px;
+    box-shadow: 0px 5px 3px rgb(90, 90, 90);
+}
+
+.ventana h2{
+    text-align:center;
+}
+
+.ventana .aceptar{
+    background-color: rgb(0, 119, 255);
+    color:white;
+    border:2px solid white;
+    float:right;
+
+    display:block;
+    height: 40px;
+    width: 100px;
+    padding: 2px;
+}
+
+.ventana .aceptar:hover{
+    background-color:rgb(0, 77, 164);
+}
+
+/* Ventana lateral de velocidades y resoluciones */
+.ventanaLateral{
+    position:absolute;
+    z-index: 2;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.8;
+    width: 15%;
+    min-width: 150px;
+    border-radius: 10%;
+    bottom: 10px;
+    left: -1000px;
+    transition: left 0.5s;
+
+}
+.ventanaLateral b{
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.ventanaLateral ul{
+    margin: 20px 0px;
+    padding: 0;
+
+}
+.ventanaLateral li{
+    list-style: none;
+    padding:10px;
+    border-top: 2px solid rgb(222,222,222);
+}
+
+.ventanaLateral li:hover{
+    background-color: rgb(222,222,222);
+}
+
+/* Contenedor de los elementos de volumen */
+.contenedor{
+    position:relative;
+}
+
+/* Sección del volumen desplegable*/
+#sobresaliente{
+    
+    position:absolute;
+    top:5px;
+    left: 100px;
+    background-color: rgb(255, 255, 255);
+
+    border-radius:10px;
+    padding: 10px 10px;
+    z-index: 5;
+    height: 20px;
+    visibility: hidden;
+    transition: visibility 0.5s;
+
+}
+
+#barraGris{
+    background-color: rgb(222, 222, 222);
+    width: 0;
+    height: 6px;
+    border-radius:10px;
+    margin-top: 7px;
+    transition: width 0.5s;
+
+}
+
+#barraVolumen{
+    background-color: rgb(164,0,179);
+    width: 0;
+    height: 100%;
+    transition: width 0.5s;
+    border-radius:10px;
+}
+
+/* Rueda de carga*/
+.progress-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    outline: 1px solid rgba(289, 197, 252, .5);
+    outline-offset: -1px;
+}
+
+.progress-bar::after,
+.number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+}
+
+.progress-bar::after {
+    content: '';
+    width: 110px;
+    height: 110px;
+    border-radius: inherit;
+    outline: inherit;
+}
+
+.circle {
+    stroke-dasharray: 410;
+    stroke-dashoffset: 410;
+    transform: rotate(-98deg);
+    transition: stroke-dashoffset 0.1s;
+}
+
