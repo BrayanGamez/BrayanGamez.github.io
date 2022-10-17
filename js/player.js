@@ -384,7 +384,7 @@ function ayuda() {
     var ventana = document.querySelector(".ventana");
     // Si es verdadero, se abre la ventana.
     if (mostrar) {
-        ventana.style.top = "20px";
+        ventana.style.top = "30vh";
         centrarFlotantes('.ventana', document.body, 'x');
         mostrar = false;
 
