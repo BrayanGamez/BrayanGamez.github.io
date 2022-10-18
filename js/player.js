@@ -382,16 +382,19 @@ document.addEventListener('keydown', (event) => {
 function ayuda() {
 
     var ventana = document.querySelector(".ventana");
+    var wrapperVentana = document.querySelector('.wrapperVentana');
     // Si es verdadero, se abre la ventana.
     if (mostrar) {
         ventana.style.top = "30vh";
         centrarFlotantes('.ventana', document.body, 'x');
+        wrapperVentana.style.display = 'flex';
         mostrar = false;
 
     }
     // Si es falso, se cierra
     else {
         ventana.style.top = "-1000px";
+        wrapperVentana.style.display = 'none';
         mostrar = true;
 
     }
