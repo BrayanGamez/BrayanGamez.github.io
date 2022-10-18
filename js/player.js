@@ -807,7 +807,6 @@ function ajustarLaterales() {
 
     var rowGapFinal = altoVideo - altoSuperior - altoInferior;
     document.querySelector(".columna1").style.gridRowGap = `${rowGapFinal / 2}px`;
-    document.querySelector(".columna1").style.paddingTop = `${rowGapFinal / 4}px`;
 }
 
 // Especifíca la altura mínima del video
