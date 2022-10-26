@@ -7,34 +7,49 @@
     <title>Reproductor de Vídeo</title>
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/player.js"></script>
-
 </head>
 
-<body>
+<body class="section">
 
+    <div class="container">
+        <label class="switch">
+            <input class="check" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
 
     <!-- Ventana de ayuda -->
-    <div class="ventana">
-        <h2>Atajos de Teclado</h2>
-        <ul>
-            <li>Flecha Izquierda: Atrasar 5 segundos</li>
-            <li>Flecha Derecha: Adelantar 5 segundos</li>
-            <li>M: Activar/Desactivar Volumen</li>
-            <li>S: Siguiente Video</li>
-            <li>A: Video Anterior</li>
-            <li>H: Ver atajos</li>
-            <li>P: Pantalla Completa</li>
-        </ul>
-
-        <br>
-        <button class="aceptar boton">Aceptar</button>
+    <div class="wrapperVentana">
+        <div class="ventana">
+            <h2>Atajos de Teclado</h2>
+            <ul>
+                <li>Flecha Izquierda: <span class="ayudaBold">Atrasar 5 segundos</span></li>
+                <hr/>
+                <li>Flecha Derecha: <span class="ayudaBold">Adelantar 5 segundos</span></li>
+                <hr/>
+                <li>M: <span class="ayudaBold">Activar/Desactivar Volumen</span></li>
+                <hr/>
+                <li>S: <span class="ayudaBold">Siguiente Video</span></li>
+                <hr/>
+                <li>A: <span class="ayudaBold">Video Anterior</span></li>
+                <hr/>
+                <li>H: <span class="ayudaBold">Ver atajos</span></li>
+                <hr/>
+                <li>P: <span class="ayudaBold">Pantalla Completa</span></li>
+                <hr/>
+            </ul>
+    
+            <br>
+            <button class="aceptar boton btnAceptar">Aceptar</button>
+        </div>
     </div>
 
 
     <!-- Contenido principal-->
-    <section>
+    <section >
 
-        <!-- Columna izquierda -->
+        
+            <!-- Columna izquierda -->
         <div class="columna1">
 
             <!-- Botones superiores: siguiente, play y anterior -->
@@ -153,7 +168,6 @@
 
     </section>
 
-
+<script type="text/javascript" src="js/toggle.js"></script>
 </body>
-
 </html>
